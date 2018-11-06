@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<form name="myForm">
+
+
+    <h3>Amount</h3>
+
+    <input id="id1" type="number" name="Amount" min="0" placeholder="Nhập số tiền" style="margin-right: 100px;">
+
+    <select id="from" onchange="myFunction()" style="margin-right: 100px;">
+        <option value="VND">VND</option>
+        <option value="USD" selected>USD</option>
+        <option value="EUR">EUR</option>
+        <option value="JPY">JPY</option>
+    </select>
+
+    <select id="to" onchange="aFunction()" style="margin-right: 100px;">
+        <option value="VND" selected>VND</option>
+        <option value="USD">USD</option>
+        <option value="EUR">EUR</option>
+        <option value="JPY">JPY</option>
+    </select>
+
+    <input type="button" value="Convert" onclick="main()">
+    <p id="demo"></p>
+
+</form>
+<script>
+        var from;
+        var to;
+        var num;
+
+        function myFunction() {
+            from = document.getElementById("from").value;
+            console.log(from);
+
+        }
+        function aFunction() {
+
+            to = document.getElementById("to").value;
+            console.log(to);
+
+        }
+        function check() {
+            var z;
+            z = document.forms["myForm"]["Amount"].value;
+            if (z == "") {
+                alert("Box must be filed out!");
+                return false;
+            }
+            return z;
+        }
+        function input() {
+
+            num = document.getElementById("id1").value;
+            console.log(num);
+            return num;
+        }
+        var rate = {
+            EUR : 26000,
+            USD : 23000,
+            JPY : 20000,
+            VND : 1
+        }
+        function main() {
+
+            check();
+            input();
+            var h;
+            h = (rate[from]/rate[to])*num;
+            document.getElementById("demo").innerHTML = "Số tiền là : " + h;
+
+        }
+
+        window.onload = function () {
+            myFunction();
+            aFunction();
+        }
+
+</script>
+
+</body>
+</html>
