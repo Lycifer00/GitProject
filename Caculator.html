@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form name="myForm">
+    <h1>Caculator</h1>
+    <input id="id1" type="number" name="Amount" placeholder="Nhap so a">
+    <input id="id2" type="number" name="Amount" placeholder="Nhap so b">
+    <br>
+    <br>
+    <input type="button" value="Addition(+)" onclick="addition()">
+    <input type="button" value="Subtraction(-)" onclick="subtraction()">
+    <input type="button" value="Multiplication(X)" onclick="multiplication()">
+    <input type="button" value="Division(/)" onclick="division()">
+    <p id="demo"></p>
+</form>
+<script>
+    var num1;
+    var num2;
+    function main() {
+        num1 = document.getElementById("id1").value;
+        num2 = document.getElementById("id2").value;
+        console.log(num1);
+        console.log(num2);
+
+    }
+
+    function addition() {
+        main();
+        var x;
+        x = (+num1) + (+num2);
+        document.getElementById("demo").innerHTML = "Ket qua la: " + x;
+
+
+    }
+    function subtraction() {
+        main();
+        var y;
+        y = num1 - num2;
+        document.getElementById("demo").innerHTML = "Ket qua la: " + y;
+
+
+    }
+    function multiplication() {
+        main();
+        var z;
+        z = num1 * num2;
+        document.getElementById("demo").innerHTML = "Ket qua la: " + z;
+
+    }
+    function division() {
+        main();
+        var t;
+        t = num1 / num2;
+        document.getElementById("demo").innerHTML = "Ket qua la: " + t;
+
+    }
+
+
+
+</script>
+
+</body>
+</html>
